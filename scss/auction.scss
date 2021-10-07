@@ -1,0 +1,174 @@
+// file with null style
+@import "nulstyle.scss";
+
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+
+}
+.container { 
+	min-width: 400px;
+	margin: 0px auto;
+}
+
+.header {
+	height: 100%;
+	flex: 0 1 auto;
+}
+.menu {
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+	&__element {
+		flex: 1 0 240px;
+		margin: 5px 10px;
+		height: 80px;
+		
+		&_concolidate {
+			border: solid 1px #aaa; 
+			border-radius: 5px;
+			opacity: 0.5;
+			background: url(../img/analysis_chart.png)10px 20px no-repeat, url(../img/play.png)40px 40px/24px 24px no-repeat;
+		}
+		&_concolidate-on {
+			opacity: 1;
+		}
+		&_concolidate-on:hover {
+			box-shadow: 0px 0px 5px #999; 
+			cursor: pointer;
+		}
+		&_upload {	
+			border: solid 1px #aaa;
+			border-radius: 5px;
+			background: url(../img/excel.png)10px 20px no-repeat, url(../img/upload.png)40px 40px/24px 24px no-repeat;
+			opacity: 0.5; 
+			& p{
+				display: block;
+				position: relative;
+				top:15px;
+				left: 17px;
+				width: 70px;
+				text-align: center;
+			}
+		}
+		&_upload-on {	
+			opacity: 1; 
+		}
+
+		&_upload-on:hover {
+			//background-color: #fafafa;	
+			box-shadow: 0px 0px 5px #999;
+			cursor: pointer; 
+		}
+	}
+	&__button {
+		position: relative;
+		color: #2a441f;
+		&_1{
+			margin: 30px 0 0 60px;
+		}
+		&_2{
+			margin: 30px 0 0 60px;
+		}
+		&_3{ 
+			margin: 30px 0 0 60px;
+		}
+	}
+}
+
+.form {
+	&__upload {
+		position: relative;
+		width: 100%;
+		height: 100%; 
+		color: #2a441f;
+		border: solid 1px #aaa;
+		border-radius: 5px;
+		&:hover {		 	box-shadow: 0px 0px 5px #999; }
+		&.dragover 	{	
+			border: none;
+			outline:2px dashed #5d5d5d; 
+			outline-offset: -2px;	
+		}
+		&_sertificate {	background: url(../img/certificate.png)10px 20px no-repeat, url(../img/download.png)40px 40px/24px 24px no-repeat; }
+		&_awarded {			background: url(../img/awarded.png)10px 20px no-repeat, url(../img/download.png)40px 40px/24px 24px no-repeat; }
+		&_volume {			background: url(../img/volume.png)10px 20px no-repeat, url(../img/download.png)40px 40px/24px 24px no-repeat; }
+		& input[type=file]{	
+			width:100%; 
+			height: 100%; 
+			opacity: 0;	
+			position: absolute;	
+			cursor: pointer; 
+			z-index: 1;
+		}
+		& label { 	
+			display:block; 
+			top:20px;
+			margin: 0  0px 0 65px;
+			height: 14px;
+			line-height: 16px;
+			position: relative;
+		}
+		& span{ 	
+			font-weight: bold; 
+		}
+		& p{
+			display: block;
+			position: absolute;
+			top:60px;
+			left: 17px;
+			width: 70px;
+			text-align: center;
+		}
+	}
+}
+
+.content {
+	flex: 1 1 auto;
+	&_row {
+		display: flex;
+		margin: 0 10px;
+	}
+	&__table {
+		flex: 1 1 auto;
+		&_data {
+			border-collapse: collapse;
+			border: solid 1px #000;
+			& th{
+				text-align: center;
+			}
+
+			& tr{
+				border: 1px solid #000;
+				text-align: right;
+			}
+			& tr td:nth-child(odd){
+				background-color: #aaa;
+				padding: 5px 2px 5px 0;
+			}
+			& tr td:nth-child(even ){
+				background-color: red;
+				padding: 5px 2px 5px 0;
+			}
+		}
+	}
+}
+
+.footer {
+	height: 20px;
+	flex: 0 1 auto;
+	&__row {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	&__element{
+		text-align:center;
+	}
+}
+

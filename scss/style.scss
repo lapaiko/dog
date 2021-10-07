@@ -1,0 +1,132 @@
+// file with null style
+@import "nulstyle.scss";
+
+
+.wrapper { //контейнер
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	border:solid 1px red;
+}
+.conteiner{ 
+	max-width: 1700px;
+	margin: 0px auto;
+	border:solid 2px green;
+}
+
+.menu { //елемент
+	height: 100px;
+	flex: 0 1 auto;
+	border:solid 1px rgb(0, 132, 255);
+		&__row {
+			display: flex; //контейнер
+			height: 100px;
+			justify-content:space-around;
+			align-items: flex-start;
+		}	
+}
+
+
+.content {
+	flex: 1 1 auto;
+	border:solid 1px rgb(0, 255, 13);
+}
+
+.footer {
+	height: 40px;
+	flex: 0 1 auto;
+	border:solid 1px rgb(0, 132, 255);
+}
+
+.formUpload 				{	
+	display:flex; 
+	justify-content:center; 
+	align-items:center; 
+	flex-direction:column;
+	width:330px; height:100px; 
+	outline:2px dashed #5d5d5d; 
+	outline-offset:-12px;
+	background-color: #e0d835; 
+	color: #2a441f;
+
+	&.dragover 	{	
+		background-color: #fafafa;	
+		outline-offset: -17px;	
+	}
+	& label	  		{ 	
+		//font-weight: bold; 
+		font-size:14px;
+	}
+	& span	  		{ 	
+		font-weight: bold; 
+	}
+
+	//& label:hover 	{	
+	//	cursor: pointer; 
+	//	text-decoration: underline;		
+	//}
+	& label.focus 	{	
+		outline: 1px solid #0078d7;	
+		outline: -webkit-focus-ring-color auto 5px;	
+	}
+	& input[type=file]{	
+		width:330px; 
+		height:100px; 
+		opacity: 1;	
+		position: absolute;	
+		cursor: pointer; 
+		border: 1px solid red;
+	}
+	&:hover{
+		text-decoration: underline;
+	}
+}
+
+
+
+
+//.formUpload 				{	
+//	display:flex; 
+//	justify-content:center; 
+//	align-items:center; 
+//	flex-direction:column;
+//	width:330px; height:100px; 
+//	outline:2px dashed #5d5d5d; 
+//	outline-offset:-12px;
+//	background-color: #e0f2f7; 
+//	color: #1f3c44;
+//			
+//
+//	&.dragover 	{	
+//		background-color: #fafafa;	
+//		outline-offset: -17px;	}
+//	& label	  		{ 	
+//		font-weight: bold; 
+//		font-size:12px;					}
+//	& label:hover 	{	
+//		cursor: pointer; 
+//		text-decoration: underline;		}
+//	& label.focus 	{	
+//		outline: 1px solid #0078d7;	
+//		outline: -webkit-focus-ring-color auto 5px;	}
+//	//& img 			{	
+//	//	margin-bottom: 20px; 
+//	//	user-select: none; 			}
+//	& div 			{	
+//		position: relative; z-index: 10; 
+//		text-align:center;	}
+//	& input[type=file]{	
+//		width: 0.1px;	
+//		height: 0.1px; 
+//		opacity: 0;	
+//		position: absolute;	
+//		z-index: -10;	
+//	}
+//
+//}
+
+
+
+
+
