@@ -92,11 +92,11 @@ body {
 }
 
 .title__task {
-  margin: 10px auto;
+  margin: 20px auto 10px;
   padding: 0 10px;
   font-size: 24px;
   font-weight: 700;
-  color: #999;
+  color: #630163;
 }
 
 .header {
@@ -119,6 +119,7 @@ body {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
+  border-bottom: solid 2px #630163;
 }
 
 .header__column_2 {
@@ -154,7 +155,6 @@ body {
   width: 100%;
   height: 100%;
   color: #2a441f;
-  border: solid 1px #aaa;
   border-radius: 5px;
 }
 
@@ -190,13 +190,13 @@ body {
 }
 
 .menu__upload:hover {
-  -webkit-box-shadow: 0px 0px 5px #999;
-          box-shadow: 0px 0px 5px #999;
+  -webkit-box-shadow: 0px 0px 5px #630163;
+          box-shadow: 0px 0px 5px #630163;
 }
 
 .menu__upload.dragover {
   border: none;
-  outline: 2px dashed #5d5d5d;
+  outline: 2px dashed #630163;
   outline-offset: -2px;
 }
 
@@ -229,8 +229,8 @@ body {
 }
 
 .menu__upload_concolidate:hover {
-  -webkit-box-shadow: 0px 0px 0px #999;
-          box-shadow: 0px 0px 0px #999;
+  -webkit-box-shadow: 0px 0px 0px #630163;
+          box-shadow: 0px 0px 0px #630163;
 }
 
 .menu__upload_concolidate.active {
@@ -239,8 +239,8 @@ body {
 }
 
 .menu__upload_concolidate.active:hover {
-  -webkit-box-shadow: 0px 0px 5px #999;
-          box-shadow: 0px 0px 5px #999;
+  -webkit-box-shadow: 0px 0px 5px #630163;
+          box-shadow: 0px 0px 5px #630163;
 }
 
 .menu__upload_concolidate-on {
@@ -249,8 +249,8 @@ body {
 }
 
 .menu__upload_concolidate-on:hover {
-  -webkit-box-shadow: 0px 0px 5px #999;
-          box-shadow: 0px 0px 5px #999;
+  -webkit-box-shadow: 0px 0px 5px #630163;
+          box-shadow: 0px 0px 5px #630163;
 }
 
 .menu__upload_analisys {
@@ -261,8 +261,8 @@ body {
 }
 
 .menu__upload_analisys:hover {
-  -webkit-box-shadow: 0px 0px 0px #999;
-          box-shadow: 0px 0px 0px #999;
+  -webkit-box-shadow: 0px 0px 0px #630163;
+          box-shadow: 0px 0px 0px #630163;
 }
 
 .menu__upload_analisys-on {
@@ -271,8 +271,8 @@ body {
 }
 
 .menu__upload_analisys-on:hover {
-  -webkit-box-shadow: 0px 0px 5px #999;
-          box-shadow: 0px 0px 5px #999;
+  -webkit-box-shadow: 0px 0px 5px #630163;
+          box-shadow: 0px 0px 5px #630163;
 }
 
 .menu__upload_auction {
@@ -283,8 +283,8 @@ body {
 }
 
 .menu__upload_auction:hover {
-  -webkit-box-shadow: 0px 0px 0px #999;
-          box-shadow: 0px 0px 0px #999;
+  -webkit-box-shadow: 0px 0px 0px #630163;
+          box-shadow: 0px 0px 0px #630163;
 }
 
 .menu__upload_auction-on {
@@ -293,14 +293,14 @@ body {
 }
 
 .menu__upload_auction-on:hover {
-  -webkit-box-shadow: 0px 0px 5px #999;
-          box-shadow: 0px 0px 5px #999;
+  -webkit-box-shadow: 0px 0px 5px #630163;
+          box-shadow: 0px 0px 5px #630163;
 }
 
 .progressbar__body {
   height: 5px;
   visibility: hidden;
-  margin: 5px 10px 10px 55px;
+  margin: 10px 10px 10px 55px;
 }
 
 .progressbar__indicator {
@@ -366,14 +366,12 @@ body {
   position: relative;
   width: 120px;
   height: 20px;
-  margin: 0 5px 5px 5px;
+  margin: 0 5px 10px 5px;
   padding: 3px 0 0 25px;
 }
 
 .tpp__station_box:hover {
   cursor: pointer;
-  -webkit-box-shadow: 0px 0px 0px #999;
-          box-shadow: 0px 0px 0px #999;
 }
 
 .tpp__station_box::before {
@@ -398,12 +396,17 @@ body {
   opacity: 0.7;
 }
 
+.tpp__station_box.active:hover:before {
+  opacity: 1;
+}
+
 .table__analisys {
   margin: 0 0.5% 0 0.5%;
   width: 99%;
   border-collapse: collapse;
   border: 2px solid purple;
   font-size: 11px;
+  color: #630163;
 }
 
 .table__analisys th {
