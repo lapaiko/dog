@@ -182,7 +182,7 @@ function consolidateData() {
 		//processing
 		processingData();
 
-		menu__upload_concolidate.classList.remove('menu__element_concolidate-on');
+		menu__upload_concolidate.classList.remove('menu__upload_concolidate-on');
 		menu__upload_analisys.classList.add('menu__upload_analisys-on');
 
 		chJSON = {}; chName = {};
