@@ -13,11 +13,11 @@
 
 .title{
 	&__task{
-		margin: 10px auto;
+		margin: 20px auto 10px;
 		padding: 0 10px;
 		font-size: 24px;
 		font-weight: 700;
-		color: #999;
+		color: rgb(99, 1, 99);
 	}
 }
 
@@ -31,9 +31,12 @@
 	&__column {
 		&_1 {
 			flex: 1 1 auto;
+			//background: rgb(192, 174, 192);
+			border-bottom:solid 2px  rgb(99, 1, 99);
 		}
 		&_2 {
 			flex:0 0 10px; 
+			//border-bottom:solid 2px rgb(99, 1, 99);
 		}
 	}
 }
@@ -44,7 +47,6 @@
 		justify-content: space-between;
 		align-items: center;
 		flex-wrap: wrap;
-
 	}
 	&__element{
 		height: 80px;
@@ -57,7 +59,8 @@
 		width: 100%;
 		height: 100%; 
 		color: #2a441f;
-		border: solid 1px #aaa;
+		//color: rgb(99, 1, 99);
+		//border: solid 1px #aaa;
 		border-radius: 5px;
 	
 		& input[type=file]{	
@@ -88,10 +91,10 @@
 			text-align: center;
 		}
 
-		&:hover {		 	box-shadow: 0px 0px 5px #999; }
+		&:hover {		 	box-shadow: 0px 0px 5px rgb(99, 1, 99); }
 		&.dragover 	{	
 			border: none;
-			outline:2px dashed #5d5d5d; 
+			outline:2px dashed rgb(99, 1, 99);// #5d5d5d; 
 			outline-offset: -2px;	
 		}
 		&_sertificate {	background: url(../img/certificate.png)10px 20px no-repeat, url(../img/download.png)40px 40px/24px 24px no-repeat; }
@@ -113,11 +116,11 @@
 				text-align: center;
 			}
 		}
-		&_concolidate:hover { box-shadow: 0px 0px 0px #999; }
+		&_concolidate:hover { box-shadow: 0px 0px 0px rgb(99, 1, 99); }
 		&_concolidate.active { opacity: 1; cursor: pointer; } 
-		&_concolidate.active:hover { box-shadow: 0px 0px 5px #999; }
+		&_concolidate.active:hover { box-shadow: 0px 0px 5px rgb(99, 1, 99); }
 		&_concolidate-on { opacity: 1; cursor: pointer; } 
-		&_concolidate-on:hover { box-shadow: 0px 0px 5px #999; }
+		&_concolidate-on:hover { box-shadow: 0px 0px 5px rgb(99, 1, 99); }
 
 		&_analisys { 
 			background: url(../img/excel.png)10px 20px no-repeat, url(../img/upload.png)40px 40px/24px 24px no-repeat;
@@ -125,9 +128,9 @@
 			padding: 22px  0px 0 65px;
 			font-weight: 700;
 		}
-		&_analisys:hover { box-shadow: 0px 0px 0px #999; }
+		&_analisys:hover { box-shadow: 0px 0px 0px rgb(99, 1, 99); }
 		&_analisys-on { opacity: 1; cursor: pointer; }
-		&_analisys-on:hover { box-shadow: 0px 0px 5px #999; }
+		&_analisys-on:hover { box-shadow: 0px 0px 5px rgb(99, 1, 99); }
 
 		&_auction { 
 			background: url(../img/excel.png)10px 20px no-repeat, url(../img/upload.png)40px 40px/24px 24px no-repeat;
@@ -135,9 +138,9 @@
 			padding: 22px  0px 0 65px;
 			font-weight: 700;
 		}
-		&_auction:hover { box-shadow: 0px 0px 0px #999; }
+		&_auction:hover { box-shadow: 0px 0px 0px rgb(99, 1, 99); }
 		&_auction-on { opacity: 1; cursor: pointer; }
-		&_auction-on:hover { box-shadow: 0px 0px 5px #999; }
+		&_auction-on:hover { box-shadow: 0px 0px 5px rgb(99, 1, 99); }
 	}
 }
 
@@ -145,7 +148,7 @@
 	&__body {
 		height: 5px;
 		visibility: hidden;
-		margin: 5px 10px 10px 55px;
+		margin: 10px 10px 10px 55px;
 	}
 	&__indicator{
 		height: 100%;
@@ -194,12 +197,12 @@
 			position: relative;
 			width: 120px;
 			height: 20px;
-			margin: 0 5px 5px 5px;
+			margin: 0 5px 10px 5px;
 			padding: 3px 0 0 25px;
+			//border: solid 1px #555;
 
 			&:hover{
 				cursor: pointer;
-				box-shadow: 0px 0px 0px #999;
 			}
 
 			&::before{
@@ -221,6 +224,9 @@
 				background-color: #fff;
 				opacity: 0.7;
 			}
+			&.active:hover:before{
+				opacity: 1;
+			}
 		}
 	}
 }
@@ -232,6 +238,7 @@
 		border-collapse: collapse;
 		border: 2px solid purple;
 		font-size: 11px;
+		color: rgb(99, 1, 99);
 		& th{border: 1px solid purple;}
 		& tbody{font-size: 14px;}
 
@@ -272,6 +279,7 @@
 .footer {
 	flex: 0 1 auto;
 	background-color: rgb(99, 1, 99);
+	//background-color: #999;
 	color: #fff;
 	margin: 10px 0 0 0;
 	&__row {
