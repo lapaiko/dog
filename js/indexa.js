@@ -213,7 +213,9 @@ function processingData() {
 		let up = arAnalysis[ip].up_awardedvolume, down = arAnalysis[ip].down_awardedvolume, both = arAnalysis[ip].both_awardedvolume;
 
 		if (Product == "FCR") {
-			arAnalysis[ip].both_auction = 2 * both; arAnalysis[ip].Direction = 'range'; setDirection = "both";
+			//arAnalysis[ip].both_auction = 2 * both; arAnalysis[ip].Direction = 'range'; setDirection = "both";
+			//2021-10-21 - змінено логіку визначення РПЧ
+			arAnalysis[ip].both_auction = both; arAnalysis[ip].Direction = 'range'; setDirection = "both";
 		}
 		if (Product == "aFRR") {
 			if ((up > 0 && down == 0 && both == 0) || (up > 0 && down == 0 && both > 0)) {
