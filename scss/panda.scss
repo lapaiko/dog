@@ -1,0 +1,966 @@
+@import "nullstyle.scss";
+
+html, body{													height: 100%;
+	background: #fff; 	font-family:Arial, Helvetica, sans-serif; }
+
+//ОБГОРТКА
+.wrapper{ overflow: hidden; transition: all 1.0s ease 0s; }
+//КОНТЕНТ
+.page {			position: absolute;
+		top: 0;			left: 0;		width: 100%;	height: 100%;
+	display: flex;		flex-direction: column;		min-height: 360px;
+}
+$delay:1s;
+.paralax {		
+	position: relative;
+	flex: 1 0 100%;
+	overflow: hidden;
+	&::after, &::before {	content: "";
+					position: absolute;	width: 100%;	height: 70px;
+	}
+	//ГРАДІЄНТ НЕБА
+	&::before {	content: "";
+		top: 0;
+		background: linear-gradient(rgba(222,235,247,0.9) 0%, rgba(222,235,247,0) 50%);
+		z-index: 1;
+	}
+	//ГРАДІЄНТ СТАВКА
+	&::after	{	content: "";
+		bottom: 0;
+		background: linear-gradient(rgba(91,155,213,0) 0%, rgba(91,155,213,0.7) 60%);
+	}
+//СПИСОК СЛОЇВ	
+	&__list {	position: absolute;
+			top: 0;			left: 0;		width: 100%;	height: 100%;
+		& li{		position: absolute;
+			top: 0;			left: 0;		width: 100%;	height: 100%;
+	}	}
+//НЕБО
+	&__bg {		position: absolute;
+			top: -5%;		left: -5%;	width:  110%;	height: 110%;
+		background: url(../img/background.png)50% 100%/cover no-repeat;
+	}
+//СОНЦЕ
+	&__sun{	position: absolute;
+		top: 2%; 	left: 5%;	width: 0px;		height: 0px;
+		transform-origin: 100% 50%; 	//зміщення точки транформації
+		animation: sun 3.5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+		&_lite{
+			position: absolute;				width: 300px;	height: 300px;
+			border: solid 3px rgba(248,195,11,1);
+			background: rgba(235,230,153,1) ;
+		}	
+		&_progress { //div
+			position: absolute;
+			left: 0;
+			bottom: 79px; // - 0%
+			height: 144px;// - 100%
+			width: 100%;
+			background: #fe9e02;
+		}
+		&_percent { //span
+			display: block;
+			position: absolute;
+			width: 100%;
+			height: 40px;
+			top: 120px;
+			text-transform: uppercase;
+			text-align: center;
+			font-weight: 700;
+			letter-spacing: 2px;
+			font-size: 40px;
+			transform: rotate(-10deg);			
+			color: #fe9e02;
+		}
+		& img{	position: absolute; 			
+			top: 0px;					width: 300px;	height: 300px;		opacity: 1; 
+		}
+	}	
+//ГАЛЯВИНА
+	&__land{		position: absolute;
+			bottom: -5%;	left: -5%;	width: 110%;	height: 735px;
+		& img{
+			bottom: 0px;					width: 100%;	height: 100%;
+	}	}
+//ГРАВІЙ БАМБУКОВОГО ЛІСУ
+	&__grit{		position: absolute;
+			bottom: 0%;		right: -5%;	width: 120%;	height: 560px;  //bottom: 4%;
+		& img{
+			bottom: 0px;					width: 100%;	height: 100%;
+	}	}
+//ПАНДА
+	&__panda{	position: absolute;
+			bottom: -4%;	left: 45%;	width: 0px;		height: 0px;
+			transition-duration: $delay;
+		& span{
+			color:rgba(0,0,0,0)
+		}	
+		&.over{
+			&:hover{
+			cursor: pointer;
+			& div{ background-color: yellow;	}
+			& div::before{ 
+				content: "";
+				position: absolute;
+				left: 32px;
+				bottom: 25px;
+				width: 220px;
+				height: 250px;
+				background: url(../img/panda_bol_lite.png)0 0/100% 100% no-repeat;	}
+			}		
+			& span{
+				display: block;
+				position: absolute;
+				left: 145px;
+				bottom: 540px;
+				width: 170px;
+				height: 380px;
+				background: url(../img/bol.png)0 0/100% no-repeat;
+				z-index: 3;
+				padding: 50px 0 0 0px;
+				transform-origin: 0 100%; 	//зміщення точки транформації
+				animation: bol 5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+				& p{
+					display: block;
+					transform: rotate(10deg);
+					text-transform: uppercase;
+					letter-spacing: 5px;
+					font-size: 30px;
+					font-weight: 700;
+					color: #fff;
+					text-align: center;
+					transform: rotate(-30deg);
+				}
+			}
+		}	
+		
+		& img{	position: absolute;	margin: 0 0 0 25px;
+			bottom: 450px;					width: 200px;	height: 230px;
+	}	}
+//КОШИК - Сертифікати
+	&__basket{	position: absolute;
+		bottom: -4%; 	left: 28%;	width: 0px;		height: 0px;
+		transition-duration: $delay;
+		& img{	position: absolute; 			margin: 0 0 0 30px;
+			bottom: 570px;					width: 210px;	height: 175px;		opacity: 0.2; 
+		}	
+
+		&.over{
+			& div{ background: yellow;	 }
+         & img{ opacity: 0.7; }
+		}	
+		&.upload{
+         & img{ opacity: 1; }
+		}	
+		&.analis{
+			& div img{ bottom: 60px;	width: 225px;	height: 200px; opacity: 1; z-index: 1;}
+			& img{ height: 210px; opacity: 1; z-index: 3;}
+			&:hover{
+				cursor: pointer;
+				& div{
+					background-color: yellow;	
+					&::before{ 
+						content: "";
+						position: absolute;
+						left: 35px;
+						bottom: 30px;
+						width: 235px;
+						height: 230px;
+						background: url(../img/basket_lite.png)0 0/100% 100% no-repeat;	
+						z-index: 2;
+					}
+				}	
+			}
+		}
+	}
+//КУЧА-БАМБУКУ - Акцептовані / Подані пропозиції
+	&__list-stick{
+		position: absolute;
+			bottom: -4%;	left: 62%;	width: 0px;		height: 0px;
+			transition-duration: $delay;	
+		&.over{
+			& div{ background: yellow;	 }
+         & img{ opacity: 0.7; }
+		}	
+		&.upload{
+         & img{ opacity: 1; }
+		}	
+		&_1 img{
+			position: absolute;			//margin: 0 0 0 -10px;
+			left:-10px; bottom: 535px;					width: 250px;	height: 200px;		opacity: 0.2;
+			z-index: 1;
+		}
+		&_2 img{
+			position: absolute;			//margin: 0 0 0 -10px;
+			left:-10px; bottom: 305px;					width: 250px;	height: 200px;		opacity: 0.2;
+			z-index: 1;
+	}	}
+
+// ГАЛАЯВИНА - Панди / Куч-бамбуку / Кошика
+	&__glade{
+		position: absolute;				width: 290px;	height: 150px;
+		border-radius: 50%;
+		border: solid 3px rgba(248,195,11,1);
+		background: rgba(235,230,153,1) ;
+
+//ТАБЛИЧКА
+		&_3 img, &_4 img  { //img
+			position: absolute;
+			left:160px;	bottom: 60px;	width: 225px;	height: 200px;					opacity: 1;
+			transform: rotate(10deg);
+		}	
+		&_2 img{
+			position: absolute;
+			right:160px;	bottom: 60px;	width: 225px;	height: 200px;					opacity: 1;
+			transform: rotate(-10deg);
+		}	
+
+//ЛІЧИЛЬНИКИ
+		&_count-2, &_count-3, &_count-4 { //p
+			//border: solid 3px #aaa;
+			//background: #ddd ;
+			border-radius: 10px;
+			display: block;
+			position: absolute;
+			width: 180px;
+			height: 45px;
+			bottom: 160px;
+			text-transform: uppercase;
+			text-align: center;
+			line-height: 40px;
+			font-weight: 700;
+			letter-spacing: 2px;
+			font-size: 40px;
+			color: #fff;
+			z-index: 1;
+		}
+		&_count-3, &_count-4 {	left: 185px;	transform: rotate(10deg);		}
+		&_count-2				{	right: 185px;		transform: rotate(-10deg);		}
+//ПІДПИСИ
+		&_caption-2, &_caption-3, &_caption-4  { //span
+			//border: solid 3px #aaa;
+			display: block;
+			position: absolute;
+			bottom: 210px;
+			width: 100%;
+			text-transform: uppercase;
+			text-align: center;
+			font-weight: 700;
+			letter-spacing: 2px;
+			font-size: 24px;
+			color: #333;
+			z-index: 1;
+		}
+		&_caption-3, &_caption-4 { left: 140px; transform: rotate(10deg);	}
+		&_caption-2 				 { right: 140px; transform: rotate(-10deg);	}
+
+		&_1{bottom: 410px;	left: -20px;	}
+		&_2{bottom: 530px;	left: -20px;	}
+		&_3{bottom: 530px;	left: -20px;	}
+		&_4{bottom: 300px;	left: -20px;	}
+	}
+
+//БАМБУКОВИЙ ЛІС
+	&__bambuk{
+		position: absolute;				
+		bottom: 4%;							width: 300px;	height: 400px;   //bottom: 4%;
+		transform-origin: 50% 100%; 	//зміщення точки транформації
+		transition-duration: $delay;
+		&_1 {
+			right: 0%;			margin: 0 -150px 420px 0 ;
+			background: url(../img/sprout_1.png)0px bottom no-repeat, url(../img/bambuk_4.png)0 0 no-repeat;
+			animation: sway_1 3s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+		}
+		&_2 {
+			right: 0%;			margin: 0 -90px 220px 0 ;
+			background: url(../img/sprout_2.png)90px bottom no-repeat, url(../img/bambuk_3.png)20px 0 no-repeat ;
+			animation: sway_2 4s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+		}
+		&_3 {
+			right: 0%;			margin: 0 0px 120px 0 ;
+			background: url(../img/sprout_1.png)0px bottom no-repeat, url(../img/bambuk_2.png)10px 0 no-repeat ;
+			animation: sway_3 5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+		}
+		&_4 {
+			right: 0%;			margin: 0 -70px 30px 0 ;
+			background: url(../img/sprout_5.png)100px bottom no-repeat, url(../img/sprout_2.png)0px 170px no-repeat ;
+			animation: sway_4 5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	}	}
+//КАМІНЦІ В ЛІСІ БАМБУКУ
+	&__stone{	position: absolute;
+		bottom: 2.5%;							width: 250px;	height: 50px;
+		transition-duration: $delay;
+		&_1 {
+			right: 0%;			margin: 0 -130px 415px 0;
+			transform: scale(0.8);
+			background: url(../img/stone_1.png)0 0 no-repeat;
+		}
+		&_2 {
+			right: 0%;			margin: 0 -70px 215px 0;
+			transform: scale(0.8);
+			background: url(../img/stone_2.png)0 0 no-repeat, url(../img/stone_2.png)100px 0 no-repeat;
+		}
+		&_3 {
+			right: 2%;			margin: 0 0px 115px 0;
+			transform: scale(0.8);
+			background: url(../img/stone_3.png)0 0 no-repeat, url(../img/stone_3.png)100px 0 no-repeat;
+	}	}
+// СТАВОК
+	&__pond{
+		position: absolute;
+		bottom: -10%;	left: -10%;			width: 120%;	height: 570px;
+		transform-origin: 0% 100%; 	//зміщення точки транформації
+		animation: pond 5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+		& img{
+			bottom: 0px;						width: 100%;	height: 100%;			
+	}	}
+
+//БОБЕР
+	&__bober{	position: absolute;
+		bottom: 100px;	left: 10%;	width: 10px;		height: 10px;
+		transition-duration: $delay;
+	}
+//БРОВЕНЯКИ БОБРА
+	&__log{
+		position: absolute;
+		bottom: 0px; left: 0px; width: 230px;	height: 70px;
+		background: url(../img/log.png)0 0 no-repeat;
+		transform-origin: 50% 100%; 	//зміщення точки транформації
+		animation: bober 3s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+		z-index: 5;
+		transition-duration: $delay;
+		& span {
+			color: rgba(0,0,0,0);
+		}	
+		&::before{	content: "";
+			position: absolute;	//margin: 0 0 0 0px;
+			bottom: 5px;	left: 0px;				width: 210px;	height: 240px;
+			background: url(../img/bober.png)10px 10px/185px 230px no-repeat;
+		}
+		&.over{
+			cursor: pointer;
+			& span {
+				display: block;
+				position: absolute;
+				bottom: 340px;
+				left: 130px;
+				color: #fff;
+				background-color: rgba(0,0,0,0);
+				font-size: 30px;
+				font-weight: 700;
+				text-transform: uppercase;
+				transform: rotate(-85deg);
+				z-index: 6;
+			}
+			&::before{
+				content: "";
+				position: absolute;
+				bottom: 5px;	left: 0px;				width: 210px;	height: 240px;
+				background: url(../img/bober_on.png)10px 10px/190px 230px no-repeat;
+			}
+			&::after{
+				content: "";
+				position: absolute;
+				bottom: 105px;	left: 175px;				width: 73px;	height: 350px;
+				background: url(../img/paddle.png)0 0/73px 350px no-repeat;
+			}
+			&:hover::before{
+				content: "";
+				position: absolute;
+				bottom: 5px;	left: 0px;				width: 210px;	height: 240px;
+				background: url(../img/bober_on.png)10px 10px/190px 230px no-repeat, 
+				url(../img/bober_lite.png)0 0/210px 193px no-repeat;
+
+			}
+		}
+
+	}
+//ХВИЛЯ ПІД БРЕВНАМИ	
+	&__wave{
+		position: absolute;		//border: solid 1px red;
+		bottom: -10px; left: -20px; width: 270px;	height: 30px;
+		background: url(../img/wave.png)0 0 no-repeat;
+		transform-origin: 50% 100%; 	//зміщення точки транформації
+		animation: wave 5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+		z-index: 6;
+	}
+
+
+
+
+	$scl__w1500:0.9;						//1
+	@media (max-width:1500px) { 
+		&__bambuk_3 			{ display: none;}											
+		&__stone_3 				{ display: none; }
+
+		&__panda					{
+			& img  				{ transform: scale($scl__w1500); }
+			&.over{
+				&:hover div::before { 
+					content: "";
+					position: absolute;
+					bottom: 35px;
+				}
+				& span{
+					animation: bol_w1500 5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+					bottom: 545px;
+				}	
+			}
+		}	
+		
+		&__basket 				{
+			& img 	  			{ transform: scale($scl__w1500); }	
+			&.analis:hover		{
+				cursor: pointer;
+				& div::before	{ 
+					content: "";
+					position: absolute;
+					left: 40px;
+					bottom: 35px;
+					width: 230px;
+					height: 230px;
+				}
+			}
+		}	
+		&__list-stick img		{ transform: scale($scl__w1500);	}
+
+		&__glade					{ transform: scale($scl__w1500); 
+			&_3 img, &_4 img  { transform: rotate(10deg);		}	
+			&_2 img				{ transform: rotate(-10deg);		}	
+		}
+		
+		&__log	{ animation: bober_w1500 5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);	}
+		&__wave	{ animation: wave_w1500 5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);	}
+		&__sun	{ animation: sun_w1500 3.5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);	}
+		&__paper { transform: scale($scl__w1500); 
+		//	&__paper-conteiner{	max-width: 1200px;}
+		}
+	}	
+
+	$scl__w1050:0.7;						//1
+	@media (max-width:1100px) { 
+		&__bambuk				{ 
+			&_2	{ display: none;}											
+			&_3	{ display: none;}
+			&_4 	{ margin: 0 -105px 30px 0 ;}								
+		}	
+		&__stone{ 
+			&_2 { display: none; }
+			&_3 { display: none; }
+		}	
+
+		&__basket				{ 
+			left:13%;
+			& img  				{ transform: scale($scl__w1050); bottom: 550px; }
+			&.analis:hover		{
+				cursor: pointer;
+				& div::before	{ 
+					content: "";
+					position: absolute;
+					left: 40px;
+					bottom: 31px;
+					width: 235px;
+					height: 230px;
+				}
+			}
+		}
+
+		&__panda					{ 
+			left:34%;
+			& img   	 			{ transform: scale($scl__w1050); bottom: 420px; }	
+			&.over{
+				&:hover div::before{ 
+					content: "";
+					position: absolute;
+					bottom: 18px;
+				}	
+				& span{
+					animation: bol_w1050 5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+					bottom: 510px;
+				}	
+			}
+		}
+
+		&__list-stick			{ 
+			left:55%;
+			& img					{ transform: scale($scl__w1050); }
+			&_1  img 			{ bottom: 520px;}
+			&_2  img 			{ bottom: 290px;}	
+		}
+		
+		&__glade 				{ transform: scale($scl__w1050); 
+			&_3 img, &_4 img  { transform: rotate(10deg);	bottom: 60px;	}	
+			&_2 img				{ transform: rotate(-10deg);	bottom: 60px;	}	
+		}
+
+		&__log	{ animation: bober_w1050 5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);	}
+		&__wave	{ animation: wave_w1050 5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);	}
+		&__sun	{ top:1%; left: 30%;
+					  animation: sun_w1050 3.5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);	}
+	  	&__paper { transform: scale($scl__w1050); 
+			//&__paper-conteiner{max-width: 900px;}
+		}
+	}	
+
+	$scl__w800:0.5;						//1
+	@media (max-width:800px) { 
+		&__bambuk{
+			&_2 					{ display: none;}											
+			&_4 					{ margin: 0 -140px 30px 0 ;}
+		}
+		&__stone_2 				{ display: none; }
+
+		&__basket				{ 
+			left:10%;
+			& img  				{ transform: scale($scl__w800); bottom: 540px;}	
+			&.analis:hover		{
+				cursor: pointer;
+				& div::before	{ 
+					content: "";
+					position: absolute;
+					left: 45px;
+					bottom: 37px;
+					width: 237px;
+					height: 235px;
+				}
+			}
+		}
+		
+		&__panda					{ 
+			left:27%;
+			& img   	 			{ transform: scale($scl__w800); bottom: 410px;}	
+			&.over{
+				&:hover div::before{ 
+					content: "";
+					position: absolute;
+					bottom: 27px;
+				}
+				& span{
+					animation: bol_w800 5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+					bottom: 510px;
+					left: 135px;
+				}	
+			}
+		}
+		
+		&__list-stick			{ 
+			left:44%;
+			& img					{ transform: scale($scl__w800); }
+			&_1  img 			{ bottom: 520px;} 
+			&_2  img 			{ bottom: 290px;}
+		}
+
+		&__glade 				{ transform: scale($scl__w800); 
+			&_3 img, &_4 img  { transform: rotate(10deg);	bottom: 60px;	}	
+			&_2 img				{ transform: rotate(-10deg);	bottom: 60px;	}	
+		}
+
+		&__log	{ animation: bober_w800 5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);	}
+		&__wave	{ animation: wave_w800 5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);	}
+		&__sun	{ top:1%; left: 35%;
+					  animation: sun_w800 3.5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);	}
+		&__paper { transform: scale($scl__w800); 
+			//&__paper-conteiner{	max-width: 1400px; font-size: 10px;}
+		}					  
+	}
+
+	$scl__h700:0.67;
+	@media (max-height: 700px)	{ 
+		&__bambuk					{
+			&_1 						{ margin: 0 -160px 200px 0 ;}	
+			&_2 						{ display: none;}					
+			&_3 						{ margin: 0 -20px 90px 0 ;}	
+			&_4 						{ margin: 0 -100px 0px 0 ;}
+		}
+
+		&__stone					{
+			&_1 					{ margin: 0 -160px 190px 0 ;}
+			&_2 					{ display: none; }
+			&_3 					{ margin: 0 -20px 70px 0 ;}
+		}
+
+		&__land 					{ height: 400px; } 
+		&__pond 					{ height: 240px; } 
+		&__grit 					{ height: 350px; } 
+
+		&__basket				{ left:16%;
+			& img  				{ transform: scale($scl__h700); bottom: 235px;}	
+			&.analis:hover		{
+				cursor: pointer;
+				& div::before	{ 
+					content: "";
+					position: absolute;
+					left: 40px;
+					bottom: 40px;
+					width: 238px;
+					height: 233px;
+				}
+			}
+		}
+		
+		&__panda					{ 
+			left:34%;
+			& img   	 			{ transform: scale($scl__h700); bottom: 155px;}	
+			&.over{
+				&:hover div::before{ 
+					content: "";
+					position: absolute;
+					bottom: 21px;
+				}
+				& span{
+					animation: bol_h700 5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+					bottom: 255px;
+					left: 140px;
+				}	
+			}
+		}
+
+		&__list-stick 			{
+			& img					{ transform: scale($scl__h700); }
+			&_1					{ 
+				left:52%;
+				& img 			{ bottom: 200px;} 
+			}
+			&_2					{ 
+				left:60%;
+				& img 			{ bottom: 70px; }
+			}
+		}
+
+		&__glade 				{ 
+			transform: scale($scl__h700);
+			&_1				{ bottom: 145px; }
+			&_2				{ bottom: 210px; 
+				& img			{ transform: rotate(-10deg);	bottom: 60px;	}	
+			}
+			&_3				{ bottom: 210px; }
+			&_4				{ bottom: 80px;  }
+
+			&_3 img, &_4 img  { transform: rotate(10deg);	bottom: 60px;	}	
+		}
+
+		&__bober	{ bottom: 20px;}
+		&__log	{ animation: bober_h700 5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);	}
+		&__wave	{ animation: wave_h700 5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);	}
+		&__sun	{  top:1%; left: 70%;
+					  animation: sun_h700 3.5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);	}
+	   &__paper { transform: scale($scl__h700); }
+	}	
+
+	$scl__w800_700:0.4;						//1
+	@media   (max-width:800px) and (max-height:700px) { 
+		&__bambuk				{
+			&_1 					{ display: none;}											
+			&_2 					{ display: none;}											
+			&_3 					{ display: none;}											
+			&_4 					{ display: none;}
+		}
+
+		&__stone {
+			&_1 { display: none; }
+			&_2 { display: none; }
+			&_3 { display: none; }
+		}	
+
+		&__land 					{ height: 400px; } 
+		&__pond 					{ height: 240px; } 
+		&__grit 					{ height: 270px;} 
+
+		&__basket				{ 
+			left:3%;
+			& img		  			{ transform: scale($scl__w800_700); bottom: 215px;}	
+			&.analis:hover		{
+				cursor: pointer;
+				& div::before	{ 
+					content: "";
+					position: absolute;
+					left: 50px;
+					bottom: 44px;
+					width: 237px;
+					height: 235px;
+				}
+			}
+		}
+		
+		&__panda					{ 
+			left:25%;
+			& img   	 			{ transform: scale($scl__w800_700); bottom: 135px;}	
+			&.over{
+				&:hover div::before{ 
+					content: "";
+					position: absolute;
+					bottom: 21px;
+				}
+				& span{
+					animation: bol_w800_700 5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+					bottom: 240px;
+					left: 135px;
+				}	
+			}
+		}
+
+		&__list-stick			{ 
+			left:47%;
+			& img					{ transform: scale($scl__w800_700); }
+			&_1  img 			{ bottom: 200px; } 
+			&_2  img 			{ bottom: 70px; }
+		}
+
+		&__glade 				{ 
+			transform: scale($scl__w800_700); 
+			&_1					{ bottom: 145px; }
+			&_2					{ bottom: 210px; }
+			&_3					{ bottom: 210px; }
+			&_4					{ bottom: 80px; }
+			&_3 img, &_4 img  { transform: rotate(10deg);	bottom: 60px;	}	
+			&_2 img				{ transform: rotate(-10deg);	bottom: 60px;	}	
+		}
+
+		&__bober	{ bottom: 20px; left: 0%;}
+		&__log	{ animation: bober_w800_700 5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);	}
+		&__wave	{ animation: wave_w800_700 5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);	}
+		&__sun	{ animation: sun_w800_700 3.5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);	}
+		&__paper { transform: scale($scl__w800_700); 
+			//&__paper-conteiner{max-width: 1800px;}
+		}
+	}
+	
+}
+
+.paralax {
+	&__paper {
+		height: 100%;
+		overflow: hidden;			//border: solid 2px red;
+	}
+	&__paper-conteiner{
+		max-width: 1300px;
+		margin: 0px auto;		//border: solid 2px green;
+		height: 100%;
+		padding: 65px 30px;
+		background: url(../img/paper.png)0 0/ 100% 100%  no-repeat;
+	}
+}
+.paper {
+	display: none;
+	&__row {
+		display: flex;
+		flex-direction: column;
+		
+		height: 100%;
+	}
+	&__element {
+		&_tpp {
+			flex: 0 1 70px;
+			margin: 0 0 10px 0;
+			display: flex;
+		}
+		&_table {
+			flex: 1 1 auto;	
+			overflow-y: auto;
+			overflow-x: hidden;
+			max-width: 100%;
+			margin: 0 0 10px 0;
+			border-top: solid 1px #4e340b;
+			border-bottom: solid 1px #4e340b;
+		}
+		&_button{
+			flex: 0 1 50px;
+			margin: 0 0 5px 0;
+			& div{
+				width: 200px;
+				height: 50px;
+				border: solid 1px #333;
+				border-radius: 5px;
+				//line-height: 32px;
+				padding: 17px 0 0 50px;
+				background: url(../img/excel.png)9px 8px/32px no-repeat;
+				&:hover{
+					cursor: pointer;
+					background-color: #fff;
+				}
+			}
+		}
+	}
+	&__item 		{
+		&_tpp		{
+			flex: 1 1 auto;
+			display: flex;
+			flex-wrap: wrap;
+		}
+		&_close{
+			flex: 0 0 50px;
+			position: relative;
+			& div{
+				//border: dashed 2px #333;
+				border-radius: 50%;
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 40px;
+				height: 40px;
+				opacity: 0.7;
+				&::before, &::after{
+					content: "";
+					position: absolute;
+					left: 5%;
+					top: 48%;
+					width: 90%;
+					height: 5%;
+					background: #333;
+				}
+				&::before	{ transform: rotate(45deg);}
+				&::after		{ transform: rotate(-45deg);	}
+			}
+			& div:hover{
+				opacity: 1;
+				cursor: pointer;
+				border: solid 2px #fff;
+				background-color: #fff;
+				&::after, &::before{ background: red; }
+			}
+		}
+	}
+	$color_tbl:#4e340b;
+	&__table {
+		margin: 0 auto ;
+		width: 100%;
+		border-collapse: collapse;
+		border: 2px solid $color_tbl ;
+		font-size: 12px;
+		color: $color_tbl;
+		& th{border: 1px solid $color_tbl; padding: 5px;}
+		& tbody{font-size: 14px;}
+
+		& td{padding: 5px 5px 5px 2px; text-align: right;}
+		& td:nth-child(1) { min-width: 85px;	border: 1px solid $color_tbl;}
+		& td:nth-child(2) { min-width: 50px;	border: 1px solid $color_tbl;}
+		& td:nth-child(3) {	            border: 1px solid $color_tbl;}
+		& td:nth-child(4) { min-width: 50px;	border: 1px solid $color_tbl;}
+		& td:nth-child(5) { min-width: 50px;	border: 1px solid $color_tbl;}
+		& td:nth-child(6) { min-width: 50px;	border: 1px solid $color_tbl;}
+		& td:nth-child(7) { min-width: 50px;	border: 1px solid $color_tbl;}
+		& td:nth-child(8) { min-width: 60px;	border: 1px solid $color_tbl;}
+		& td:nth-child(1n+9) { 
+			min-width: 30px; 
+			border-bottom: 1px solid $color_tbl; 
+		} 
+		& td:nth-child(9) {border-left: 2px solid $color_tbl;} 
+		& td:nth-child(10) {border-left: 1px solid $color_tbl;} 
+		& td:nth-child(11) {border-left: 2px solid $color_tbl;}  
+
+		& td:nth-child(12) {border-left: 1px solid $color_tbl;} 
+		& td:nth-child(13) {border-left: 2px solid $color_tbl;}  
+
+		& td:nth-child(14) {border-left: 1px solid $color_tbl;}
+		& td:nth-child(15) {border-left: 2px solid $color_tbl;}
+		&_cell 				 {border-right: solid 2px $color_tbl;}
+	}
+}
+.tpp{
+	&__row{
+		display: flex;
+	}
+	&__station{
+		flex: 0 0 170px;
+
+		&_box{
+			position: relative;
+			width: 150px;
+			height: 20px;
+			margin: 0 5px 10px 5px;
+			padding: 3px 0 0 25px;
+			color: #333;
+			&:hover{
+				cursor: pointer;
+				color: #fff;
+			}
+			&::before{
+				content: "";
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				height: 20px;
+				width: 20px;
+				border-radius: 50%;
+				border: solid 3px #333;
+				background-color: rgb(248, 163, 6);
+				opacity: 0.7;
+			}
+			&:hover::before{
+				border: solid 3px #fff;
+				opacity: 1;
+			}
+			&.active::before{
+				background-color: #777;
+				opacity: 0.7;
+			}
+			&.active:hover:before{
+				border: solid 3px #fff;
+
+				opacity: 1;
+			}
+		}
+	}
+}
+
+
+$scl__w1500:0.9;
+$scl__w1050:0.7;
+$scl__w800:0.5;
+$scl__h700:0.67;
+$scl__w800_700: 0.4;
+@keyframes wave 		 {	0% 	{ transform: rotateZ(-5deg);}		 100% { transform: rotateZ(5deg);}}
+@keyframes wave_w1500 {	0% 	{ transform: rotateZ(-5deg) scale($scl__w1500);} 
+								100% 	{ transform: rotateZ(5deg) scale($scl__w1500); } }
+@keyframes wave_w1050 {	0% 	{ transform: rotateZ(-5deg) scale($scl__w1050);} 
+								100% 	{ transform: rotateZ(5deg) scale($scl__w1050); } }
+@keyframes wave_w800  {	0% 	{ transform: rotateZ(-5deg) scale($scl__w800);}  
+								100% 	{ transform: rotateZ(5deg) scale($scl__w800); } }
+@keyframes wave_h700  {	0% 	{ transform: rotateZ(-5deg) scale($scl__h700);}  
+								100% 	{ transform: rotateZ(5deg) scale($scl__h700); } }
+@keyframes wave_w800_700  {	0% { transform: rotateZ(-5deg) scale($scl__w800_700);}  
+								100% 	{ transform: rotateZ(5deg) scale($scl__w800_700); } }
+
+@keyframes bober 		 { 0% { transform: rotateZ(2deg);} 		 100% { transform: rotateZ(-2deg);} }
+@keyframes bober_w1500{ 0% { transform: rotateZ(2deg) scale($scl__w1500);} 100% { transform: rotateZ(-2deg) scale($scl__w1500);} }
+@keyframes bober_w1050{ 0% { transform: rotateZ(3deg) scale($scl__w1050);} 100% { transform: rotateZ(-2deg) scale($scl__w1050);} }
+@keyframes bober_w800 { 0% { transform: rotateZ(3deg) scale($scl__w800);}  100% { transform: rotateZ(-3deg) scale($scl__w800);} }
+@keyframes bober_h700 { 0% { transform: rotateZ(4deg) scale($scl__h700);}  100% { transform: rotateZ(-4deg) scale($scl__h700);} }
+@keyframes bober_w800_700 { 0% { transform: rotateZ(5deg) scale($scl__w800_700);}  100% { transform: rotateZ(-5deg) scale($scl__w800_700);} }
+
+@keyframes sun 		 {	0%	{ transform: rotateZ(1deg) scale(0.95);} 100% { transform: rotateZ(-1deg) scale(1.05);	}}
+@keyframes sun_w1500	 {	0%	{ transform: rotateZ(1deg) scale(0.85);} 100% { transform: rotateZ(-1deg) scale(0.95);	}}
+@keyframes sun_w1050	 {	0%	{ transform: rotateZ(1deg) scale(0.75);} 100% { transform: rotateZ(-1deg) scale(0.85);	}}
+@keyframes sun_w800	 {	0%	{ transform: rotateZ(1deg) scale(0.65);} 100% { transform: rotateZ(-1deg) scale(0.75);	}}
+@keyframes sun_h700	 {	0%	{ transform: rotateZ(1deg) scale(0.75);} 100% { transform: rotateZ(-1deg) scale(0.85);	}}
+@keyframes sun_w800_700{0%	{ transform: rotateZ(1deg) scale(0.55);} 100% { transform: rotateZ(-1deg) scale(0.65);	}}
+
+@keyframes sway_1 {   
+	0%   { transform: rotateZ(1deg) scale(0.75);	}
+	100% { transform: rotateZ(-1deg) scale(0.8);	}
+}
+@keyframes sway_2 {
+	0%   { transform: rotateZ(-1deg) scale(1);	}
+	100% { transform: rotateZ(2deg)  scale(0.95);	}
+}
+@keyframes sway_3 {
+	0%   { transform: rotateZ(-2deg) scale(1.02);	}
+	100% { transform: rotateZ(2deg) scale(1.0);	}
+}
+@keyframes sway_4 {
+	0%   { transform: rotateZ(1deg) scale(1);	}
+	100% { transform: rotateZ(-1deg) scale(1);	}
+}
+@keyframes pond {
+	0%   { transform: rotateZ(0.1deg) scale(0.98);	}
+	100% { transform: rotateZ(-0.1deg) scale(1.02);	}
+}
+
+@keyframes bol 			{	0%{transform: rotate(10deg) scale(0.9);}	100%{transform: rotate(-10deg) scale(1.1);} }
+@keyframes bol_w1500 	{	0%{transform: rotate(10deg) scale(0.8);}	100%{transform: rotate(-10deg) scale(1.0);} }
+@keyframes bol_w1050 	{	0%{transform: rotate(10deg) scale(0.7);}	100%{transform: rotate(-10deg) scale(0.9);} }
+@keyframes bol_w800 		{	0%{transform: rotate(10deg) scale(0.6);}	100%{transform: rotate(-10deg) scale(0.8);} }
+@keyframes bol_h700 		{	0%{transform: rotate(10deg) scale(0.6);}	100%{transform: rotate(-10deg) scale(0.8);} }
+@keyframes bol_w800_700	{	0%{transform: rotate(10deg) scale(0.4);}	100%{transform: rotate(-10deg) scale(0.5);} }
+
