@@ -93,6 +93,37 @@ body {
 
 .title__task {
   margin: 20px auto 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.title__task a {
+  display: block;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 60px;
+          flex: 0 1 60px;
+  margin: 0 0 0 10px;
+  width: 60px;
+  height: 60px;
+  border: solid 1px #630163;
+  border-radius: 50%;
+  background: url(../img/panda.png) 9px/40px no-repeat;
+}
+
+.title__task a:hover {
+  background-color: rgba(99, 1, 99, 0.3);
+}
+
+.title__task span {
+  display: block;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  margin: 0 0 0 10px;
   padding: 0 10px;
   font-size: 24px;
   font-weight: 700;
@@ -366,7 +397,7 @@ body {
 
 .tpp__station_box {
   position: relative;
-  width: 120px;
+  width: 150px;
   height: 20px;
   margin: 0 5px 10px 5px;
   padding: 3px 0 0 25px;
