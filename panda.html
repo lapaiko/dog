@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Panda bambuk</title>
+	<link rel="stylesheet" href="css/panda.css">
+	<script text="text/javascript" src="js/xlsx.full.min.js"></script>
+	<script text="text/javascript" src="js/filesaver.js"></script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="page">
+			<div class="paralax">
+				<ul class="paralax__list">
+					<li data-depth="0.10">
+						<div class="paralax__bg"></div>
+					</li>
+					<li data-depth="0.20">
+						<div class="paralax__sun" id="sun">
+							<div class="paralax__sun_lite">
+								<div class="paralax__sun_progress" id="sun_progress"></div>
+								<span class="paralax__sun_percent" id="sun_percent">100%</span>
+							</div>
+							<img src="img/sun.png" alt="">
+						</div>
+					</li>
+					<li data-depth="0.30">
+						<div class="paralax__land">
+							<img src="img/land.png" alt="">
+						</div>
+					</li>
+					<li data-depth="0.40">
+						<div class="paralax__grit">
+							<img src="img/grit.png" alt="">
+						</div>
+					</li>
+					<li data-depth="0.50">
+						<div class="paralax__bambuk paralax__bambuk_1"></div>
+						<div class="paralax__stone paralax__stone_1"></div>
+						<div class="paralax__bambuk paralax__bambuk_2"></div>
+						<div class="paralax__stone paralax__stone_2"></div>
+						<div class="paralax__bambuk paralax__bambuk_3"></div>
+						<div class="paralax__stone paralax__stone_3"></div>
+						<div class="paralax__bambuk paralax__bambuk_4"></div>
+					</li>
+					<li data-depth="0.60">
+						<div class="paralax__pond">
+							<img src="img/pond.png" alt="">
+						</div>
+					</li>
+
+					<li data-depth="0.80">
+
+						<div class="paralax__basket" onclick="showPaper()" id="sertificate">
+							<div class="paralax__glade paralax__glade_2">
+								<img src="img/plate_left.png" alt="">
+								<p class="paralax__glade_count-2" id="sertificate_count">0</p>
+								<span class="paralax__glade_caption-2" id="sertificate_plate">Сертифікати</span>
+							</div>
+							<img src="img/basket.png" alt="" id="basket">
+						</div>
+
+						<div class="paralax__list-stick paralax__list-stick_1" id="awarded">
+							<div class="paralax__glade paralax__glade_3">
+								<img src="img/plate.png" alt="">
+								<p class="paralax__glade_count-3" id="awarded_count">0</p>
+								<span class="paralax__glade_caption-3">Акцептовано</span>
+							</div>
+							<img src="img/list_stick.png" alt="">
+						</div>
+						<div class="paralax__list-stick paralax__list-stick_2" id="volume">
+							<div class="paralax__glade paralax__glade_4">
+								<img src="img/plate.png" alt="">
+								<p class="paralax__glade_count-4" id="volume_count">0</p>
+								<span class="paralax__glade_caption-4">Подано</span>
+							</div>
+							<img src="img/list_stick.png" alt="">
+						</div>
+
+						<div class="paralax__panda" onclick="consolidateData()" id="panda">
+							<div class="paralax__glade paralax__glade_1"></div>
+							<img src="img/panda_bol.png" alt="" id="panda_img">
+							<span>
+								<p>Гляну що подали</p>
+							</span>
+						</div>
+
+						<div class="paralax__bober" onclick="downloadExcelAuction()">
+							<div class="paralax__log" id="bober">
+								<span>Аукціони</span>
+							</div>
+							<div class="paralax__wave"></div>
+						</div>
+
+					</li>
+					<li data-depth="0.90" class="paper" id="paper">
+						<div class="paralax__paper">
+							<div class="paralax__paper-conteiner">
+								<div class="paper__row">
+									<div class="paper__element paper__element_tpp">
+										<div class="paper__item paper__item_tpp" id="tpp">
+
+										</div>
+										<div class="paper__item paper__item_close">
+											<div onclick="closePage()"></div>
+										</div>
+									</div>
+									<div class="paper__element paper__element_table">
+										<table class="paper__table">
+											<thead>
+												<tr>
+													<th rowspan="2">Дата</th>
+													<th rowspan="2">Час</th>
+													<th rowspan="2">ПДП</th>
+													<th rowspan="2">ДП</th>
+													<th rowspan="2">Напрям</th>
+													<th rowspan="2">Подано</th>
+													<th rowspan="2">Серт-кат</th>
+													<th rowspan="2" class="paper__table_cell">Статус</th>
+													<th colspan="2" class="paper__table_cell">Завантаження</th>
+													<th colspan="2" class="paper__table_cell">Розвантаження</th>
+													<th colspan="2">Симетрія</th>
+												</tr>
+												<tr>
+													<th>Подано</th>
+													<th class="paper__table_cell" ">Серт-кат</th>
+													<th>Подано</th>
+													<th class=" paper__table_cell">Серт-кат</th>
+													<th>Подано</th>
+													<th class="paper__table_cell">Серт-кат</th>
+
+												</tr>
+											<tbody id="table"></tbody>
+											</thead>
+										</table>
+									</div>
+									<div class="paper__element paper__element_button">
+										<div onclick="downloadExcelAnalysis()">Завантажити</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+
+
+
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.parallax.js"></script>
+	<script src="js/panda.js"></script>
+</body>
+<!--li data-depth="0.30">
+						<div class="paralax__basket">
+							<div class="paralax__glade paralax__glade_2"></div>
+							<img src="img/basket.png" alt="">
+						</div>
+					</li>
+					<li data-depth="0.30">
+						<div class="paralax__list-stick paralax__list-stick_1">
+							<div class="paralax__glade paralax__glade_3"></div>
+							<img src="img/list_stick.png" alt="">
+						</div>
+					</li>
+					<li data-depth="0.30">
+						<div class="paralax__list-stick paralax__list-stick_2">
+							<div class="paralax__glade paralax__glade_4"></div>
+							<img src="img/list_stick.png" alt="">
+						</div>
+					</li>
+
+					<li data-depth="0.30">
+						<div class="paralax__panda">
+							<div class="paralax__glade paralax__glade_1"></div>
+							<img src="img/panda.png" alt="">
+						</div>
+					</li-->
+
+</html>
