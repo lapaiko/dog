@@ -238,6 +238,58 @@ html, body {
   height: 100%;
 }
 
+.paralax__sky a {
+  display: block;
+  opacity: 0.5;
+}
+
+.paralax__sky a:hover {
+  display: block;
+  opacity: 1;
+}
+
+.paralax__sky_1 {
+  position: absolute;
+  top: 2%;
+  left: 70%;
+  -webkit-animation: sky_1 25s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          animation: sky_1 25s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.paralax__sky_1 a {
+  width: 635px;
+  height: 180px;
+  background: url(../img/sky-1.png) 0/100% no-repeat;
+}
+
+.paralax__sky_2 {
+  position: absolute;
+  top: 5%;
+  left: 40%;
+  -webkit-animation: sky_2 45s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          animation: sky_2 45s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.paralax__sky_2 a {
+  width: 475px;
+  height: 200px;
+  background: url(../img/sky-2.png) 0/100% no-repeat;
+}
+
+.paralax__sky_3 {
+  position: absolute;
+  top: 5%;
+  left: 15%;
+  -webkit-animation: sky_3 35s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          animation: sky_3 35s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.paralax__sky_3 a {
+  width: 385px;
+  height: 140px;
+  background: url(../img/sky-3.png) 0/100% no-repeat;
+}
+
 .paralax__panda {
   position: absolute;
   bottom: -4%;
@@ -2164,5 +2216,95 @@ html, body {
   100% {
     -webkit-transform: rotate(-10deg) scale(0.5);
             transform: rotate(-10deg) scale(0.5);
+  }
+}
+
+@-webkit-keyframes sky_1 {
+  0% {
+    left: 65%;
+    top: -1%;
+    -webkit-transform: rotateZ(-0.2deg) scale(1.02);
+            transform: rotateZ(-0.2deg) scale(1.02);
+  }
+  100% {
+    left: 75%;
+    top: 3%;
+    -webkit-transform: rotateZ(0.2deg) scale(0.98);
+            transform: rotateZ(0.2deg) scale(0.98);
+  }
+}
+
+@keyframes sky_1 {
+  0% {
+    left: 65%;
+    top: -1%;
+    -webkit-transform: rotateZ(-0.2deg) scale(1.02);
+            transform: rotateZ(-0.2deg) scale(1.02);
+  }
+  100% {
+    left: 75%;
+    top: 3%;
+    -webkit-transform: rotateZ(0.2deg) scale(0.98);
+            transform: rotateZ(0.2deg) scale(0.98);
+  }
+}
+
+@-webkit-keyframes sky_2 {
+  0% {
+    left: 45%;
+    top: 4%;
+    -webkit-transform: rotateZ(-0.2deg) scale(1.02);
+            transform: rotateZ(-0.2deg) scale(1.02);
+  }
+  100% {
+    left: 35%;
+    top: 0%;
+    -webkit-transform: rotateZ(0.2deg) scale(0.98);
+            transform: rotateZ(0.2deg) scale(0.98);
+  }
+}
+
+@keyframes sky_2 {
+  0% {
+    left: 45%;
+    top: 4%;
+    -webkit-transform: rotateZ(-0.2deg) scale(1.02);
+            transform: rotateZ(-0.2deg) scale(1.02);
+  }
+  100% {
+    left: 35%;
+    top: 0%;
+    -webkit-transform: rotateZ(0.2deg) scale(0.98);
+            transform: rotateZ(0.2deg) scale(0.98);
+  }
+}
+
+@-webkit-keyframes sky_3 {
+  0% {
+    left: 10%;
+    top: 0%;
+    -webkit-transform: rotateZ(-0.2deg) scale(1.02);
+            transform: rotateZ(-0.2deg) scale(1.02);
+  }
+  100% {
+    left: 20%;
+    top: 4%;
+    -webkit-transform: rotateZ(0.2deg) scale(0.98);
+            transform: rotateZ(0.2deg) scale(0.98);
+  }
+}
+
+@keyframes sky_3 {
+  0% {
+    left: 10%;
+    top: 0%;
+    -webkit-transform: rotateZ(-0.2deg) scale(1.02);
+            transform: rotateZ(-0.2deg) scale(1.02);
+  }
+  100% {
+    left: 20%;
+    top: 4%;
+    -webkit-transform: rotateZ(0.2deg) scale(0.98);
+            transform: rotateZ(0.2deg) scale(0.98);
   }
 }
