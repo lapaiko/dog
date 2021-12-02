@@ -94,8 +94,6 @@ function readFile(file) {
 		ShowProgress(Percent);															// Прогрес завантаження файлів		
 		if ((chPanda.shSize.awarded > 0 || chPanda.shSize.volume > 0) && chPanda.shSize.sertificate > 0) {
 			setDefaltStyle(0, 0); //Завантаження пропозицій - встановлення значень та стилів 
-			//panda.classList.add('over');												//Включаємо підсвітку
-			//panda_img.src = "img/panda_bol_on.png";
 		}
 	};
 	fr.readAsBinaryString(file);
