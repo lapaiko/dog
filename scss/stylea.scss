@@ -14,10 +14,31 @@
 .title{
 	&__task{
 		margin: 20px auto 10px;
-		padding: 0 10px;
-		font-size: 24px;
-		font-weight: 700;
-		color: rgb(99, 1, 99);
+		display: flex;
+		align-items: center;
+
+		& a{
+			display: block;
+			flex: 0 1 60px;
+			margin: 0 0 0 10px;
+			width: 60px;
+			height: 60px;
+			border: solid 1px rgb(99, 1, 99);
+			border-radius: 50%;
+			background: url(../img/panda.png)9px/40px no-repeat;
+		}
+		& a:hover{
+			background-color: rgba(99, 1, 99,0.3);
+		}
+		& span {
+			display: block;
+			flex: 1 1 auto;
+			margin: 0 0 0 10px;
+			padding: 0 10px;
+			font-size: 24px;
+			font-weight: 700;
+			color: rgb(99, 1, 99);
+		}
 	}
 }
 
@@ -196,7 +217,7 @@
 
 		&_box{
 			position: relative;
-			width: 120px;
+			width: 150px;
 			height: 20px;
 			margin: 0 5px 10px 5px;
 			padding: 3px 0 0 25px;
