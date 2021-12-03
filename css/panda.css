@@ -791,7 +791,6 @@ html, body {
   text-align: center;
   line-height: 18px;
   color: yellow;
-  font-weight: 700;
 }
 
 .paralax__lilia_1 {
@@ -802,12 +801,17 @@ html, body {
 }
 
 .paralax__lilia_1 span {
+  font-weight: 700;
   width: 100%;
   height: 100%;
   padding: 20px 0 0 0;
   background: url(../img/lilia-11.png) 0/100% no-repeat;
   -webkit-transform-origin: 50% 50%;
           transform-origin: 50% 50%;
+}
+
+.paralax__lilia_1 span p {
+  font-weight: normal;
 }
 
 .paralax__lilia_2 {
@@ -825,6 +829,7 @@ html, body {
   background: url(../img/lilia-12.png) 0/100% no-repeat;
   -webkit-transform-origin: 50% 100%;
           transform-origin: 50% 100%;
+  font-weight: 700;
 }
 
 .paralax__lilia_3 {
