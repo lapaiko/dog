@@ -426,7 +426,69 @@ $delay:1s;
 		z-index: 6;
 	}
 
+//ЛИСТЯ
+	&__lilia {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
+		position: absolute;
+		z-index: 30;
+		animation: lilia 5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+		//border: 1px solid red ;
+		& span {
+			display: block;
+			font-size: 16px;
+			text-align: center;
+			line-height: 18px;
+			color: yellow;
+			font-weight: 700;
+			//text-transform: uppercase;
+		}
+
+		&_1 {
+			left: 2%;	bottom: 0%;		width: 200px; height: 92px;
+			& span {
+				width: 100%; height: 100%; padding: 20px 0 0 0;
+
+				background: url(../img/lilia-11.png)0/100% no-repeat;
+				transform-origin: 50% 50%;
+			}	
+		}
+		&_2 {
+			left: 23%;	bottom: 7%;		width: 190px; height: 82px;	z-index: 12;
+			& span {
+				width: 100%; height: 100%;	padding: 20px 0 0 0;
+				background: url(../img/lilia-12.png)0/100% no-repeat;
+				transform-origin: 50% 100%;
+			}
+		}
+		&_3 {
+			left: 29%;	bottom: -1%;		width: 205px; height: 90px;
+			& span {
+				width: 100%; height: 100%;	padding: 20px 0 0 0;
+				background: url(../img/lilia-13.png)0/100% no-repeat;
+				z-index: 8;
+				transform-origin: 100% 50%;
+			}	
+		}
+		&_4 {
+			left: 40%;	bottom: 0%;		width: 193px; height: 94px;
+			& span {
+				width: 100%; height: 100%;	padding: 20px 0 0 0;
+				background: url(../img/lilia-14.png)0/100% no-repeat;
+				z-index: 7;
+				transform-origin: 100% 100%;
+			}	
+		}
+		&_5 {
+			left: 51%;	bottom: -3%;		width: 340px; height: 91px;
+			& span {
+				width: 100%; height: 100%;	padding: 25px 0 0 0;
+				background: url(../img/lilia-15.png)0/100% no-repeat;
+			}	
+		}
+	}
 
 
 	$scl__w1500:0.9;						//1
@@ -475,6 +537,7 @@ $delay:1s;
 		&__sun	{ animation: sun_w1500 3.5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);	}
 		&__paper { transform: scale($scl__w1500); }
 		&__sky	{ & a {transform: scale($scl__w1500); } }
+		&__lilia { & span {transform: scale($scl__w1500); } }
 	}	
 
 	$scl__w1050:0.7;						//1
@@ -539,6 +602,7 @@ $delay:1s;
 					  animation: sun_w1050 3.5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);	}
 	  	&__paper { transform: scale($scl__w1050); }
 	  	&__sky	{ & a {transform: scale($scl__w1050); } } 
+	  	&__lilia { & span {transform: scale($scl__w1050); } }
 	}	
 
 	$scl__w800:0.5;						//1
@@ -600,6 +664,14 @@ $delay:1s;
 					  animation: sun_w800 3.5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);	}
 		&__paper { transform: scale($scl__w800);		}					  
 		&__sky	{ & a {transform: scale($scl__w800); } } 
+		&__lilia { 
+			& span {transform: scale($scl__w800); } 
+			&_1 {	left: 0%;	}
+			&_2 {	left: 18%;	}
+			&_3 {	left: 10%;}
+			&_4 {	left: 25%;}
+			&_5 {	left: 40%;}
+		}
 	}
 
 	$scl__h700:0.67;
@@ -684,6 +756,14 @@ $delay:1s;
 					  animation: sun_h700 3.5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);	}
 	   &__paper { transform: scale($scl__h700); }
 		&__sky	{ & a {transform: scale($scl__h700); } } 
+		&__lilia { 
+			& span {transform: scale($scl__h700); } 
+			&_1 {	bottom: 3%;}
+			&_2 {	bottom: 3%;	}
+			&_3 {	bottom: -4%;}
+			&_4 {	bottom: -5%;}
+			&_5 {	bottom: -10%;}
+		}
 	}	
 
 	$scl__w800_700:0.4;						//1
@@ -761,6 +841,12 @@ $delay:1s;
 		&__sun	{ animation: sun_w800_700 3.5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);	}
 		&__paper { transform: scale($scl__w800_700);	}
 		&__sky	{ & a {transform: scale($scl__w800_700); } } 
+		&__lilia { 
+			& span {transform: scale($scl__w800_700); 
+			&_1{left: 0%; bottom:-3%}
+		} 
+	
+		}
 	}
 	
 }
@@ -1014,25 +1100,7 @@ $scl__w800_700: 0.4;
 	100% { left:15%; top: 5%; transform: rotateZ(0.2deg) 	}
 }
 
-
-//&_1{
-//	position: absolute; top: 2%; 	left: 70%;
-//	& a{ 
-//		width: 635px;  height: 180px;
-//		background: url(../img/sky-1.png)0/100% no-repeat;
-//	}	
-//}
-//&_2{
-//	position: absolute; top: 5%; 	left: 40%;
-//	& a{ 
-//		width: 475px;  height: 200px;
-//		background: url(../img/sky-2.png)0/100% no-repeat;
-//	}	
-//}
-//&_3{
-//	position: absolute; top: 5%;  left: 15%;
-//	& a{ 
-//		width: 385px;  height: 140px;
-//		background: url(../img/sky-3.png) 0 / 100% no-repeat;
-//	}	
-//}
+@keyframes lilia {
+	0%   { transform: rotateZ(-2deg)	}
+	100% { transform: rotateZ(2deg) 	}
+}
