@@ -119,7 +119,7 @@ $delay:1s;
 			}	
 		}
 		&_3{
-			position: absolute; top: 5%;  left: 15%;
+			position: absolute; top: 5%;  left: 5%;
 			animation: sky_3 35s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
 			& a{ 
 				width: 385px;  height: 140px;
@@ -473,9 +473,8 @@ $delay:1s;
 		&__log	{ animation: bober_w1500 5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);	}
 		&__wave	{ animation: wave_w1500 5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);	}
 		&__sun	{ animation: sun_w1500 3.5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);	}
-		&__paper { transform: scale($scl__w1500); 
-		//	&__paper-conteiner{	max-width: 1200px;}
-		}
+		&__paper { transform: scale($scl__w1500); }
+		&__sky	{ & a {transform: scale($scl__w1500); } }
 	}	
 
 	$scl__w1050:0.7;						//1
@@ -538,9 +537,8 @@ $delay:1s;
 		&__wave	{ animation: wave_w1050 5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);	}
 		&__sun	{ top:1%; left: 30%;
 					  animation: sun_w1050 3.5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);	}
-	  	&__paper { transform: scale($scl__w1050); 
-			//&__paper-conteiner{max-width: 900px;}
-		}
+	  	&__paper { transform: scale($scl__w1050); }
+	  	&__sky	{ & a {transform: scale($scl__w1050); } } 
 	}	
 
 	$scl__w800:0.5;						//1
@@ -600,9 +598,8 @@ $delay:1s;
 		&__wave	{ animation: wave_w800 5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);	}
 		&__sun	{ top:1%; left: 35%;
 					  animation: sun_w800 3.5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);	}
-		&__paper { transform: scale($scl__w800); 
-			//&__paper-conteiner{	max-width: 1400px; font-size: 10px;}
-		}					  
+		&__paper { transform: scale($scl__w800);		}					  
+		&__sky	{ & a {transform: scale($scl__w800); } } 
 	}
 
 	$scl__h700:0.67;
@@ -686,6 +683,7 @@ $delay:1s;
 		&__sun	{  top:1%; left: 70%;
 					  animation: sun_h700 3.5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);	}
 	   &__paper { transform: scale($scl__h700); }
+		&__sky	{ & a {transform: scale($scl__h700); } } 
 	}	
 
 	$scl__w800_700:0.4;						//1
@@ -761,9 +759,8 @@ $delay:1s;
 		&__log	{ animation: bober_w800_700 5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);	}
 		&__wave	{ animation: wave_w800_700 5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);	}
 		&__sun	{ animation: sun_w800_700 3.5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);	}
-		&__paper { transform: scale($scl__w800_700); 
-			//&__paper-conteiner{max-width: 1800px;}
-		}
+		&__paper { transform: scale($scl__w800_700);	}
+		&__sky	{ & a {transform: scale($scl__w800_700); } } 
 	}
 	
 }
@@ -1005,16 +1002,16 @@ $scl__w800_700: 0.4;
 @keyframes bol_w800_700	{	0%{transform: rotate(10deg) scale(0.4);}	100%{transform: rotate(-10deg) scale(0.5);} }
 
 @keyframes sky_1 {
-	0%   { left:65%; top: -1%; transform: rotateZ(-0.2deg) scale(1.02);	}
-	100% { left:75%; top: 3%; transform: rotateZ(0.2deg) scale(0.98);	}
+	0%   { left:55%; top: -2%; transform: rotateZ(-0.2deg) }
+	100% { left:75%; top: 3%; transform: rotateZ(0.2deg) 	}
 }
 @keyframes sky_2 {
-	0%   { left:45%; top: 4%; transform: rotateZ(-0.2deg) scale(1.02);	}
-	100% { left:35%; top: 0%; transform: rotateZ(0.2deg) scale(0.98);	}
+	0%   { left:45%; top: 5%; transform: rotateZ(-0.2deg) }
+	100% { left:25%; top: -5%; transform: rotateZ(0.2deg) 	}
 }
 @keyframes sky_3 {
-	0%   { left:10%; top: 0%; transform: rotateZ(-0.2deg) scale(1.02);	}
-	100% { left:20%; top: 4%; transform: rotateZ(0.2deg) scale(0.98);	}
+	0%   { left:-5%; top: -1%; transform: rotateZ(-0.2deg)	}
+	100% { left:15%; top: 5%; transform: rotateZ(0.2deg) 	}
 }
 
 
